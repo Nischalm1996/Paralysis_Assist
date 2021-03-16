@@ -1594,10 +1594,10 @@ design rules under a new name.</description>
 <attribute name="NAME" x="24.13" y="92.075" size="1.27" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="29.972" y="83.947" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
-<element name="D1" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" package="LED_3MM" package3d_urn="urn:adsk.eagle:package:39361/1" value="" x="14.732" y="83.058" smashed="yes" rot="R90">
-<attribute name="NAME" x="12.446" y="83.058" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
-<attribute name="PROD_ID" value="DIO-08794" x="99.822" y="138.938" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="17.018" y="83.058" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
+<element name="D1" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" package="LED_3MM" package3d_urn="urn:adsk.eagle:package:39361/1" value="" x="35.052" y="92.202" smashed="yes" rot="R90">
+<attribute name="NAME" x="32.766" y="92.202" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
+<attribute name="PROD_ID" value="DIO-08794" x="120.142" y="148.082" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="37.338" y="92.202" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
 </element>
 <element name="D3" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" package="LED_3MM" package3d_urn="urn:adsk.eagle:package:39361/1" value="" x="8.509" y="83.058" smashed="yes">
 <attribute name="NAME" x="8.509" y="85.344" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
@@ -1672,9 +1672,9 @@ design rules under a new name.</description>
 <attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/A000005/?ref=eda" x="109.474" y="17.145" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="50.944" y="19.275" size="1.27" layer="27" align="top-left"/>
 </element>
-<element name="R1" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="M0805" package3d_urn="urn:adsk.eagle:package:6240587/1" value="1k" x="18.161" y="80.772" smashed="yes" rot="MR90">
-<attribute name="NAME" x="20.19300625" y="80.899003125" size="1.27" layer="26" rot="MR90"/>
-<attribute name="VALUE" x="15.875003125" y="79.756003125" size="1.27" layer="28" rot="MR90"/>
+<element name="R1" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="M0805" package3d_urn="urn:adsk.eagle:package:6240587/1" value="1k" x="35.306" y="87.63" smashed="yes" rot="MR90">
+<attribute name="NAME" x="36.32200625" y="86.614003125" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="33.020003125" y="86.614003125" size="1.27" layer="28" rot="MR90"/>
 </element>
 <element name="R11" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="M0805" package3d_urn="urn:adsk.eagle:package:6240587/1" value="1k" x="4.064" y="83.947" smashed="yes" rot="MR270">
 <attribute name="NAME" x="3.048" y="84.963" size="1.27" layer="26" rot="MR270"/>
@@ -1756,6 +1756,8 @@ design rules under a new name.</description>
 <wire x1="9.751" y1="88.491" x2="10.862" y2="88.491" width="1.016" layer="16"/>
 <wire x1="10.862" y1="88.491" x2="7.962" y2="91.391" width="1.016" layer="16"/>
 <wire x1="7.962" y1="91.391" x2="7.962" y2="93.191" width="1.016" layer="16"/>
+<wire x1="25.908" y1="93.472" x2="35.052" y2="93.472" width="1.016" layer="16"/>
+<wire x1="35.052" y1="93.472" x2="42.418" y2="93.472" width="1.016" layer="16"/>
 <wire x1="42.418" y1="93.472" x2="42.926" y2="92.964" width="1.016" layer="16"/>
 <wire x1="26.924" y1="88.011" x2="25.908" y2="89.027" width="1.016" layer="16"/>
 <wire x1="25.908" y1="89.027" x2="25.908" y2="93.472" width="1.016" layer="16"/>
@@ -1822,14 +1824,16 @@ design rules under a new name.</description>
 <via x="84.074" y="60.325" extent="1-16" drill="1.016"/>
 <wire x1="84.074" y1="60.325" x2="87.884" y2="56.515" width="0.635" layer="16"/>
 <wire x1="87.884" y1="56.515" x2="90.424" y2="56.515" width="0.635" layer="16"/>
-<wire x1="39.182" y1="86.68" x2="39.751" y2="87.249" width="1.016" layer="16"/>
-<wire x1="39.751" y1="87.249" x2="42.926" y2="90.424" width="1.016" layer="16"/>
+<wire x1="26.924" y1="84.455" x2="33.081" y2="84.455" width="1.016" layer="16"/>
+<wire x1="33.081" y1="84.455" x2="35.306" y2="86.68" width="1.016" layer="16"/>
+<wire x1="35.306" y1="86.68" x2="39.182" y2="86.68" width="1.016" layer="16"/>
+<wire x1="39.182" y1="86.68" x2="42.926" y2="90.424" width="1.016" layer="16"/>
 <wire x1="42.926" y1="90.424" x2="49.149" y2="84.201" width="1.016" layer="16"/>
 <wire x1="49.149" y1="84.201" x2="49.149" y2="77.724" width="1.016" layer="16"/>
 <wire x1="49.149" y1="77.724" x2="49.149" y2="74.168" width="1.016" layer="16"/>
 <contactref element="U1" pad="15"/>
 <wire x1="26.924" y1="84.455" x2="20.701" y2="78.232" width="1.016" layer="16"/>
-<wire x1="19.751" y1="78.232" x2="8.636" y2="78.232" width="1.016" layer="16"/>
+<wire x1="20.701" y1="78.232" x2="8.636" y2="78.232" width="1.016" layer="16"/>
 <wire x1="3.683" y1="33.147" x2="5.334" y2="31.496" width="1.016" layer="16"/>
 <wire x1="5.334" y1="31.496" x2="8.128" y2="31.496" width="1.016" layer="16"/>
 <wire x1="8.636" y1="78.232" x2="3.683" y2="73.279" width="1.016" layer="16"/>
@@ -1850,10 +1854,6 @@ design rules under a new name.</description>
 <wire x1="78.867" y1="62.992" x2="76.454" y2="65.405" width="1.016" layer="16"/>
 <wire x1="78.232" y1="59.055" x2="78.867" y2="59.69" width="1.016" layer="16"/>
 <wire x1="78.867" y1="59.69" x2="78.867" y2="62.992" width="1.016" layer="16"/>
-<wire x1="18.161" y1="79.822" x2="19.751" y2="78.232" width="1.016" layer="16"/>
-<wire x1="19.751" y1="78.232" x2="20.701" y2="78.232" width="1.016" layer="16"/>
-<wire x1="36.957" y1="84.455" x2="39.182" y2="86.68" width="1.016" layer="16"/>
-<wire x1="26.924" y1="84.455" x2="36.957" y2="84.455" width="1.016" layer="16"/>
 </signal>
 <signal name="SOUND_D0">
 <contactref element="SOUND_IN" pad="1"/>
@@ -2217,8 +2217,8 @@ design rules under a new name.</description>
 <signal name="N$3">
 <contactref element="R1" pad="2"/>
 <contactref element="D1" pad="A"/>
-<wire x1="14.732" y1="81.788" x2="18.095" y2="81.788" width="1.27" layer="16"/>
-<wire x1="18.095" y1="81.788" x2="18.161" y2="81.722" width="1.27" layer="16"/>
+<wire x1="35.052" y1="90.932" x2="35.052" y2="88.834" width="1.016" layer="16"/>
+<wire x1="35.052" y1="88.834" x2="35.306" y2="88.58" width="1.016" layer="16"/>
 </signal>
 <signal name="N$4">
 <contactref element="LED1" pad="4"/>
