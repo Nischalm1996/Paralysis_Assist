@@ -464,79 +464,6 @@ W = angled&lt;p&gt;
 </package3d>
 </packages3d>
 </library>
-<library name="ArduinoNanoV30">
-<packages>
-<package name="ARDUINO_NANO">
-<description>&lt;b&gt;Arduino Nano V3.0&lt;/b&gt;&lt;br&gt;
-&lt;p&gt;The Nano was designed and is being produced by Gravitech.&lt;br&gt;
-
-&lt;a href="http://www.gravitech.us/arna30wiatp.html"&gt;Gravitech Arduino Nano V3.0&lt;/a&gt;&lt;/p&gt;</description>
-<hole x="-22.86" y="-7.62" drill="1.778"/>
-<pad name="1" x="-20.32" y="-7.62" drill="0.8" shape="square"/>
-<pad name="2" x="-17.78" y="-7.62" drill="0.8"/>
-<pad name="3" x="-15.24" y="-7.62" drill="0.8"/>
-<pad name="4" x="-12.7" y="-7.62" drill="0.8"/>
-<pad name="5" x="-10.16" y="-7.62" drill="0.8"/>
-<pad name="6" x="-7.62" y="-7.62" drill="0.8"/>
-<pad name="7" x="-5.08" y="-7.62" drill="0.8"/>
-<pad name="8" x="-2.54" y="-7.62" drill="0.8"/>
-<pad name="9" x="0" y="-7.62" drill="0.8"/>
-<pad name="10" x="2.54" y="-7.62" drill="0.8"/>
-<pad name="11" x="5.08" y="-7.62" drill="0.8"/>
-<pad name="12" x="7.62" y="-7.62" drill="0.8"/>
-<pad name="13" x="10.16" y="-7.62" drill="0.8"/>
-<pad name="14" x="12.7" y="-7.62" drill="0.8"/>
-<pad name="15" x="15.24" y="-7.62" drill="0.8"/>
-<pad name="16" x="15.24" y="7.62" drill="0.8"/>
-<pad name="17" x="12.7" y="7.62" drill="0.8"/>
-<pad name="18" x="10.16" y="7.62" drill="0.8"/>
-<pad name="19" x="7.62" y="7.62" drill="0.8"/>
-<pad name="20" x="5.08" y="7.62" drill="0.8"/>
-<pad name="21" x="2.54" y="7.62" drill="0.8"/>
-<pad name="22" x="0" y="7.62" drill="0.8"/>
-<pad name="23" x="-2.54" y="7.62" drill="0.8"/>
-<pad name="24" x="-5.08" y="7.62" drill="0.8"/>
-<pad name="25" x="-7.62" y="7.62" drill="0.8"/>
-<pad name="26" x="-10.16" y="7.62" drill="0.8"/>
-<pad name="27" x="-12.7" y="7.62" drill="0.8"/>
-<pad name="28" x="-15.24" y="7.62" drill="0.8"/>
-<pad name="29" x="-17.78" y="7.62" drill="0.8"/>
-<pad name="30" x="-20.32" y="7.62" drill="0.8"/>
-<hole x="-22.86" y="7.62" drill="1.778"/>
-<hole x="17.78" y="7.62" drill="1.778"/>
-<hole x="17.78" y="-7.62" drill="1.778"/>
-<wire x1="-24.13" y1="8.89" x2="19.05" y2="8.89" width="0.127" layer="21"/>
-<wire x1="19.05" y1="8.89" x2="19.05" y2="3.81" width="0.127" layer="21"/>
-<wire x1="19.05" y1="3.81" x2="19.05" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="19.05" y1="-3.81" x2="19.05" y2="-8.89" width="0.127" layer="21"/>
-<wire x1="19.05" y1="-8.89" x2="-24.13" y2="-8.89" width="0.127" layer="21"/>
-<wire x1="-24.13" y1="-8.89" x2="-24.13" y2="2.54" width="0.127" layer="21"/>
-<wire x1="-24.13" y1="2.54" x2="-24.13" y2="8.89" width="0.127" layer="21"/>
-<wire x1="-24.13" y1="2.54" x2="-25.4" y2="2.54" width="0.127" layer="21"/>
-<wire x1="-25.4" y1="2.54" x2="-25.4" y2="-2.54" width="0.127" layer="21"/>
-<wire x1="-19.05" y1="-2.54" x2="-19.05" y2="2.54" width="0.127" layer="21"/>
-<wire x1="-19.05" y1="2.54" x2="-24.13" y2="2.54" width="0.127" layer="21"/>
-<wire x1="-19.05" y1="-2.54" x2="-25.4" y2="-2.54" width="0.127" layer="21"/>
-<text x="-17.78" y="0" size="1.27" layer="21" font="vector">&gt;NAME</text>
-<text x="-17.78" y="-2.54" size="1.27" layer="21" font="vector">&gt;VALUE</text>
-<circle x="0" y="0" radius="1.79605" width="0.127" layer="21"/>
-<text x="3.81" y="-1.27" size="0.8128" layer="21" font="vector" rot="R90">Reset</text>
-<text x="-20.32" y="-6.35" size="1.016" layer="21" font="vector">1</text>
-<text x="-17.78" y="3.81" size="0.6096" layer="21" font="vector" rot="R180">Mini-B USB</text>
-<wire x1="19.05" y1="3.81" x2="13.97" y2="3.81" width="0.127" layer="21"/>
-<wire x1="13.97" y1="3.81" x2="13.97" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="13.97" y1="-3.81" x2="19.05" y2="-3.81" width="0.127" layer="21"/>
-<circle x="17.78" y="-2.54" radius="0.8" width="0.127" layer="21"/>
-<circle x="17.78" y="0" radius="0.8" width="0.127" layer="21"/>
-<circle x="17.78" y="2.54" radius="0.8" width="0.127" layer="21"/>
-<circle x="15.24" y="2.54" radius="0.8" width="0.127" layer="21"/>
-<circle x="17.78" y="0" radius="0.8" width="0.127" layer="21"/>
-<circle x="15.24" y="0" radius="0.8" width="0.127" layer="21"/>
-<circle x="15.24" y="-2.54" radius="0.8" width="0.127" layer="21"/>
-<text x="12.7" y="1.27" size="0.8128" layer="21" font="vector" rot="SR270">ICSP</text>
-</package>
-</packages>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -753,10 +680,6 @@ design rules under a new name.</description>
 <attribute name="POPULARITY" value="11" x="-25.4" y="-3.81" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-33.02" y="-6.731" size="1.27" layer="27" ratio="10"/>
 </element>
-<element name="ARDUINO_NANO1" library="ArduinoNanoV30" package="ARDUINO_NANO" value="" x="-8.89" y="-15.24" smashed="yes">
-<attribute name="NAME" x="-26.67" y="-15.24" size="1.27" layer="21" font="vector"/>
-<attribute name="VALUE" x="-26.67" y="-17.78" size="1.27" layer="21" font="vector"/>
-</element>
 </elements>
 <signals>
 <signal name="SOUND_A0">
@@ -766,21 +689,15 @@ design rules under a new name.</description>
 <contactref element="SOUND_IN" pad="3"/>
 <contactref element="MPU6050" pad="7"/>
 <contactref element="SD_CARD" pad="1"/>
-<contactref element="ARDUINO_NANO1" pad="14"/>
-<contactref element="ARDUINO_NANO1" pad="19"/>
 <wire x1="-17.78" y1="3.81" x2="-31.75" y2="-3.81" width="0" layer="19" extent="1-1"/>
 <wire x1="-17.78" y1="8.89" x2="-17.78" y2="3.81" width="0" layer="19" extent="1-1"/>
-<wire x1="-1.27" y1="-7.62" x2="-17.78" y2="3.81" width="0" layer="19" extent="1-1"/>
-<wire x1="3.81" y1="-22.86" x2="-1.27" y2="-7.62" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="5V">
 <contactref element="SOUND_IN" pad="2"/>
 <contactref element="MPU6050" pad="8"/>
 <contactref element="SD_CARD" pad="2"/>
-<contactref element="ARDUINO_NANO1" pad="12"/>
 <wire x1="-20.32" y1="3.81" x2="-29.21" y2="-3.81" width="0" layer="19" extent="1-1"/>
 <wire x1="-15.24" y1="8.89" x2="-20.32" y2="3.81" width="0" layer="19" extent="1-1"/>
-<wire x1="-1.27" y1="-22.86" x2="-20.32" y2="3.81" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SOUND_D0">
 <contactref element="SOUND_IN" pad="1"/>
@@ -814,12 +731,6 @@ design rules under a new name.</description>
 </signal>
 <signal name="MISO">
 <contactref element="SD_CARD" pad="3"/>
-</signal>
-<signal name="VIN">
-<contactref element="ARDUINO_NANO1" pad="15"/>
-</signal>
-<signal name="3V3">
-<contactref element="ARDUINO_NANO1" pad="2"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

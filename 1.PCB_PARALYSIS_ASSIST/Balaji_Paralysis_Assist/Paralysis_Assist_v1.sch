@@ -3,10 +3,10 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -13072,9 +13072,9 @@ Created 2014-06-05, Karrer Zheng&lt;br&gt;
 <label x="54.61" y="61.722" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SD_CARD" gate="G$1" pin="3"/>
-<wire x1="210.82" y1="109.22" x2="226.06" y2="109.22" width="0.1524" layer="91"/>
-<label x="215.9" y="109.22" size="1.778" layer="95"/>
+<pinref part="SD_CARD" gate="G$1" pin="5"/>
+<wire x1="210.82" y1="114.3" x2="226.06" y2="114.3" width="0.1524" layer="91"/>
+<label x="215.9" y="114.3" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MOSI" class="0">
@@ -13090,23 +13090,23 @@ Created 2014-06-05, Karrer Zheng&lt;br&gt;
 <label x="52.07" y="56.642" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="NANO" gate="G$1" pin="D10"/>
-<wire x1="101.854" y1="110.49" x2="87.376" y2="110.49" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="A" pin="3"/>
-<label x="94.234" y="110.744" size="1.778" layer="95"/>
+<pinref part="NANO" gate="G$1" pin="D11"/>
+<wire x1="101.854" y1="107.95" x2="87.376" y2="107.95" width="0.1524" layer="91"/>
+<pinref part="JP2" gate="A" pin="2"/>
+<label x="93.726" y="107.95" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MISO" class="0">
 <segment>
-<pinref part="NANO" gate="G$1" pin="D5"/>
-<wire x1="101.854" y1="123.19" x2="87.376" y2="123.19" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="A" pin="8"/>
-<label x="94.234" y="123.19" size="1.778" layer="95"/>
+<pinref part="NANO" gate="G$1" pin="D12"/>
+<wire x1="101.854" y1="105.41" x2="87.376" y2="105.41" width="0.1524" layer="91"/>
+<pinref part="JP2" gate="A" pin="1"/>
+<label x="93.98" y="105.41" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SD_CARD" gate="G$1" pin="5"/>
-<wire x1="210.82" y1="114.3" x2="226.06" y2="114.3" width="0.1524" layer="91"/>
-<label x="215.9" y="114.3" size="1.778" layer="95"/>
+<pinref part="SD_CARD" gate="G$1" pin="3"/>
+<wire x1="210.82" y1="109.22" x2="226.06" y2="109.22" width="0.1524" layer="91"/>
+<label x="215.9" y="109.22" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TXNANO" class="0">
@@ -13273,16 +13273,16 @@ Created 2014-06-05, Karrer Zheng&lt;br&gt;
 </net>
 <net name="RST" class="0">
 <segment>
-<pinref part="NANO" gate="G$1" pin="D12"/>
-<wire x1="101.854" y1="105.41" x2="87.376" y2="105.41" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="A" pin="1"/>
-<label x="93.98" y="105.41" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="DISP" gate="G$1" pin="4"/>
 <wire x1="31.496" y1="51.054" x2="31.496" y2="51.562" width="0.1524" layer="91"/>
 <wire x1="31.496" y1="51.562" x2="19.05" y2="51.562" width="0.1524" layer="91"/>
 <label x="21.59" y="51.562" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="NANO" gate="G$1" pin="D5"/>
+<wire x1="101.854" y1="123.19" x2="87.376" y2="123.19" width="0.1524" layer="91"/>
+<pinref part="JP2" gate="A" pin="8"/>
+<label x="94.234" y="123.19" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TEMP" class="0">
@@ -13423,10 +13423,10 @@ Created 2014-06-05, Karrer Zheng&lt;br&gt;
 <label x="54.61" y="51.562" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="NANO" gate="G$1" pin="D11"/>
-<wire x1="101.854" y1="107.95" x2="87.376" y2="107.95" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="A" pin="2"/>
-<label x="93.726" y="107.95" size="1.778" layer="95"/>
+<pinref part="NANO" gate="G$1" pin="D10"/>
+<wire x1="101.854" y1="110.49" x2="87.376" y2="110.49" width="0.1524" layer="91"/>
+<pinref part="JP2" gate="A" pin="3"/>
+<label x="94.234" y="110.744" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="A6" class="0">
