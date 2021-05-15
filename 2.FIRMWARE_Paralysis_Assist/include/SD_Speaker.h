@@ -9,7 +9,7 @@
 //#include "SPI.h"
 
 byte SD_ChipSelectPin = 2; // = 2; //current CS configuration
-byte SpeakerPin = 9;       // originally 4 works only on 9// speaker pin
+byte SpeakerPin = 9;       // = 4;cahanged to 3  // speaker pin
 TMRpcm tmrpcm;
 
 class sdSpeaker
