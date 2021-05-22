@@ -8,41 +8,47 @@
 #include "mpu6050_imu.h"
 #include "SerialCOM.h"
 #include "LM35.h"
-//#include "SD_Speaker.h" // Speaker .h file
 
 
 #include <SPI.h>
 
-const byte SPEAK_STATE   =    1;   // if selected is speak
-const byte SWITCH_STATE  =    2;   // if selected is switch
-const byte NURSE_STATE   =    3;   // if selected is speak->Nurse
-const byte WATER_STATE   =    4;   // if selected is speak->Water
-const byte MEDICIN_STATE =    5;  // if selected is speak->Medicin
-const byte FOOD_STATE    =    6;   // if selected is speak->Food
-const byte SWITCH1_STATE =    7;   // if selected is Switch->Fan
-const byte SWITCH2_STATE =    8;   // if selected is Switch->Light
-const byte SWITCH3_STATE =    9;   // if selected is Switch->Light
+#define SPEAK_STATE       1   // if selected is speak
+#define SWITCH_STATE      2   // if selected is switch
+#define NURSE_STATE       3   // if selected is speak->Nurse
+#define WATER_STATE       4   // if selected is speak->Water
+#define MEDICIN_STATE     5  // if selected is speak->Medicin
+#define FOOD_STATE        6   // if selected is speak->Food
+#define SWITCH1_STATE     7   // if selected is Switch->Fan
+#define SWITCH2_STATE     8   // if selected is Switch->Light
+#define SWITCH3_STATE     9   // if selected is Switch->Light
 
-const byte buttonPin            = 8;  // BACK button
-const byte buttonConformation   = 6;  // OK button
-const byte soundPin             = 3;  // Sound sensor Pin
+#define buttonPin             8  // BACK button
+#define buttonConformation    6  // OK button
+#define soundPin              3  // Sound sensor Pin
 
 //const char* COMMAND = "CLICK TO...";  // Displaying on main menu screen
 //const char*  REQ_COMMAND = "REQUESTING..."; // displaying on requesting speak service menu
 float temparature = 0;
-char buff[8] = "27.13";
+//char buff[8] = "27.13";
 boolean fallDetected = false;
 byte cnt = 0;
 
 /* U8G2 initiation */
+//U8G2_ST7920_192X32_F_8080 u8g2(U8G2_R0, 8, 9, 10, 11, 4, 5, 6, 7, /*enable=*/ 18, /*cs=*/ U8X8_PIN_NONE, /*dc=*/ 17, /*reset=*/ U8X8_PIN_NONE);
+//U8G2_ST7920_192X32_F_SW_SPI u8g2(U8G2_R0, /* clock=*/ 18 /* A4 */ , /* data=*/ 16 /* A2 */, /* CS=*/ 17 /* A3 */, /* reset=*/ U8X8_PIN_NONE);
+//U8G2_ST7920_128X64_F_8080 u8g2(U8G2_R0, 8, 9, 10, 11, 4, 5, 6, 7, /*enable=*/ 18 /* A4 */, /*cs=*/ U8X8_PIN_NONE, /*dc/rs=*/ 17 /* A3 */, /*reset=*/ 15 /* A1 */);  // Remember to set R/W to 0 
+//U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R0, /* clock=*/ 18 /* A4 */ , /* data=*/ 16 /* A2 */, /* CS=*/ 17 /* A3 */, /* reset=*/ U8X8_PIN_NONE);
+//U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* CS=*/ 10, /* reset=*/ 8);
+//U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R0, /* clock=*/ 14, /* data=*/ 13, /* CS=*/ 15, /* reset=*/ 16); // Feather HUZZAH ESP8266, E=clock=14, RW=data=13, RS=CS
+//U8G2_ST7920_128X64_F_HW_SPI u8g2(U8G2_R0, /* CS=*/ 10, /* reset=*/ 8);
+//U8G2_ST7920_128X64_F_HW_SPI u8g2(U8G2_R0, /* CS=*/ 15, /* reset=*/ 16); // Feather HUZZAH ESP8266, E=clock=14, RW=data=13, RS=CS
 //U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R2, /* clock=*/ 13, /* data=*/ 10, /* CS=*/ 11, /* reset=*/ 12);
-U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R2, /* clock=*/ 13, /* data=*/ 11, /* CS=*/ 10, /* reset=*/ 5);
+U8G2_ST7920_128X64_2_SW_SPI u8g2(U8G2_R2, /* clock=*/ 13, /* data=*/ 11, /* CS=*/ 10, /* reset=*/ 5);
 
 LM393 ObjSound(soundPin); // Create Sound sensor object
 MPU6050 ObjImu;   // Object for MPU6050, for fall detection */
 comComm ObjCOM;   // Serial Communication
 lm35  ObjLM35(A3);
-//sdSpeaker Objspeak; // Speaker object
 
 /* Class for Display Memu */
 class dispST7920
@@ -77,7 +83,8 @@ class dispST7920
     /* Run Menu */
     void runMenu()
     {
-      u8g2.clearBuffer();          // clear the internal memory
+      
+      //u8g2.clearBuffer();          // clear the internal memory
       u8g2.setFont(u8g2_font_ncenB08_tr); // choose a suitable font
       //u8g2.setFont(u8g2_font_profont10_tf); // choose a suitable font
 
@@ -97,13 +104,13 @@ class dispST7920
       {
         u8g2.setCursor(15, 64);
         //dtostrf(temparature, 4, 2, buff);
-        u8g2.print(buff);
+        u8g2.print(F("27.34"));
       }
 
       // u8g2.setCursor(64, 64);
       // u8g2.print(fallVal);
 
-      u8g2.sendBuffer();
+      //u8g2.sendBuffer();
 
       /***********************************************************/
 
@@ -181,7 +188,7 @@ class dispST7920
         else {
           u8g2.print(F("SWITCH"));
         }
-        u8g2.sendBuffer();          // transfer internal memory to the display
+        ////u8g2.sendBuffer();          // transfer internal memory to the display
         display_delay(2000);    // millis to wait
         soundDetected = false; // Disable flag for sound detection
 
@@ -213,7 +220,7 @@ class dispST7920
 
         gotServiceFlag = 0; // clear service flag if it set
 
-        u8g2.clearBuffer();
+        //u8g2.clearBuffer();
       }
     }
 
@@ -221,7 +228,7 @@ class dispST7920
     void getSpeakCmds()
     {
       fallDetected = false;
-      u8g2.clearBuffer();
+      //u8g2.clearBuffer();
 
       u8g2.setFont(u8g2_font_ncenB08_tr);  // choose a suitable font
       Speak_Cnt = 0; // clear switch count
@@ -248,7 +255,7 @@ class dispST7920
           u8g2.print(F("FOOD"));  // write something to the internal memory
         }
         Speak_Cnt++; //increment speak menu count
-        u8g2.sendBuffer();          // transfer internal memory to the display
+        //u8g2.sendBuffer();          // transfer internal memory to the display
         display_delay(2000);
 
         soundDetected = false; // Disable flag for sound detection
@@ -273,7 +280,7 @@ class dispST7920
         if (gotServiceFlag == 1)
           break;  // Got service get out of speak commands loop
 
-        u8g2.clearBuffer();
+       // u8g2.clearBuffer();
       }
 
     }
@@ -283,7 +290,7 @@ class dispST7920
     void getSwitchCmds()
     {
       //u8g2.setFont(u8g2_font_ncenB08_tr);  // choose a suitable font
-      u8g2.clearBuffer();
+      //u8g2.clearBuffer();
 
       u8g2.setFont(u8g2_font_ncenB08_tr);  // choose a suitable font
       Switch_Cnt = 0; // clear switch count
@@ -309,7 +316,7 @@ class dispST7920
           u8g2.print(F("To Switch Light2"));  // write something to the internal memory
         }
         Switch_Cnt++;
-        u8g2.sendBuffer();          // transfer internal memory to the display
+        //u8g2.sendBuffer();          // transfer internal memory to the display
         display_delay(1000);
         //u8g2.drawStr(30,40," ");
 
@@ -334,7 +341,7 @@ class dispST7920
         if (gotServiceFlag == 1)
           break;  // Got service get out of speak commands loop
 
-        u8g2.clearBuffer();
+       // u8g2.clearBuffer();
       }
 
 
@@ -344,7 +351,7 @@ class dispST7920
     /* Wait for pop up service confirmation */
     void waitForServiceConformation(int requested_service)
     {
-      u8g2.clearBuffer();
+      //u8g2.clearBuffer();
       u8g2.setFont(u8g2_font_ncenB08_tr);  // choose a suitable font
       Cnt = 0; // used for alternative prints
       unsigned long waitStartTime = millis();
@@ -381,10 +388,10 @@ class dispST7920
           //u8g2.sendBuffer();
         }
 
-        u8g2.sendBuffer();          // transfer internal memory to the display
+        //u8g2.sendBuffer();          // transfer internal memory to the display
 
         /* Play Music through speaker */
-        //Objspeak.play_music(requested_service);
+        //Play requested_service);
 
         /* This below block will  wait for service Confirm button press */
         unsigned long time_now = millis();
@@ -406,7 +413,7 @@ class dispST7920
         if (gotServiceFlag == 1)
           break;  // Got service get out of wait conformation loop
 
-        u8g2.clearBuffer();
+        //u8g2.clearBuffer();
       } // end of While Loop
 
       if (gotServiceFlag == 0)
@@ -421,7 +428,7 @@ class dispST7920
 
     void SendToggleSwitch(int requested_service)
     {
-      u8g2.clearBuffer();
+      //u8g2.clearBuffer();
       //   u8g2.drawStr(30,40,command_disp[Speak_Swt++]);
       for (byte i = 0; i < 7; i++)
       {
@@ -448,7 +455,7 @@ class dispST7920
 //ObjCOM.ToggleSW(switch_ctrl[requested_service - 1]);
         }
         // Send This to Wifi Thrice from here
-        u8g2.sendBuffer();
+        //u8g2.sendBuffer();
         //    display_delay(1000);
 
         /* This below block will  wait for service Confirm button press */
@@ -462,7 +469,7 @@ class dispST7920
           i = i;
           }*/
 
-        u8g2.clearBuffer();
+      //  u8g2.clearBuffer();
         /*time_now = millis();
           while(millis() < (time_now + 1000)){
           // wait for some time
@@ -478,18 +485,23 @@ class dispST7920
     /** When Room Temparature got high turn On Fan */
     void Turn_On_FAN(char *data)
     {
-      ObjCOM.ToggleSW(data);
+  //    ObjCOM.ToggleSW(data);
 
     }
 
     void Fall_Detected()
     {
       /* This is to send mesg to indicate Fall detected */
-      ObjCOM.ToggleSW("FALL DETECTED");
+//      ObjCOM.ToggleSW(F("FALL DETECTED"));
 
-      //Objspeak.play_music(5); // requesting for fall service
+      //play requesting for fall service
     }
 
 
 }; // end of class
+
+
+
+
+
 #endif
