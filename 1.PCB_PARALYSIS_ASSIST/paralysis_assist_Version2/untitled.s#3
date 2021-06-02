@@ -12352,9 +12352,9 @@ Created 2014-06-05, Karrer Zheng&lt;br&gt;
 <attribute name="NAME" x="84.074" y="59.182" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="87.376" y="35.56" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="SPEAKER" gate="1" x="251.968" y="97.536" smashed="yes" rot="R90">
-<attribute name="NAME" x="251.968" y="93.726" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="251.968" y="103.251" size="1.778" layer="96" rot="R180"/>
+<instance part="SPEAKER" gate="1" x="253.492" y="156.464" smashed="yes" rot="R270">
+<attribute name="NAME" x="253.492" y="160.274" size="1.778" layer="95"/>
+<attribute name="VALUE" x="253.492" y="150.749" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -12449,6 +12449,12 @@ Created 2014-06-05, Karrer Zheng&lt;br&gt;
 <wire x1="74.676" y1="63.754" x2="64.77" y2="63.754" width="0.1524" layer="91"/>
 <wire x1="64.77" y1="63.754" x2="64.77" y2="64.262" width="0.1524" layer="91"/>
 <label x="67.31" y="64.262" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SPEAKER" gate="1" pin="2"/>
+<wire x1="250.952" y1="156.464" x2="245.4656" y2="156.464" width="0.1524" layer="91"/>
+<wire x1="245.4656" y1="156.464" x2="245.4656" y2="156.397959375" width="0.1524" layer="91"/>
+<label x="242.951" y="156.1338" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -12867,12 +12873,24 @@ Created 2014-06-05, Karrer Zheng&lt;br&gt;
 <wire x1="233.68" y1="172.72" x2="226.06" y2="172.72" width="0.1524" layer="91"/>
 <label x="228.6" y="172.72" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SPEAKER" gate="1" pin="1"/>
+<wire x1="250.952" y1="159.004" x2="245.653559375" y2="159.004" width="0.1524" layer="91"/>
+<wire x1="245.653559375" y1="159.004" x2="245.653559375" y2="158.981140625" width="0.1524" layer="91"/>
+<label x="242.186459375" y="158.92018125" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="SPK_2" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="SPK_2"/>
 <wire x1="233.68" y1="167.64" x2="226.06" y2="167.64" width="0.1524" layer="91"/>
 <label x="228.6" y="167.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SPEAKER" gate="1" pin="3"/>
+<wire x1="250.952" y1="153.924" x2="245.618" y2="153.924" width="0.1524" layer="91"/>
+<wire x1="245.618" y1="153.924" x2="245.618" y2="153.91891875" width="0.1524" layer="91"/>
+<label x="241.96801875" y="153.672540625" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$18" class="0">
@@ -12988,27 +13006,6 @@ Created 2014-06-05, Karrer Zheng&lt;br&gt;
 <wire x1="188.214" y1="156.21" x2="205.486" y2="156.21" width="0.1524" layer="91"/>
 <pinref part="JP1" gate="A" pin="12"/>
 <label x="191.516" y="156.464" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="SPEAKER" gate="1" pin="3"/>
-<wire x1="254.508" y1="100.076" x2="259.842" y2="100.076" width="0.1524" layer="91"/>
-<wire x1="259.842" y1="100.076" x2="259.842" y2="100.08108125" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="SPEAKER" gate="1" pin="2"/>
-<wire x1="254.508" y1="97.536" x2="259.9944" y2="97.536" width="0.1524" layer="91"/>
-<wire x1="259.9944" y1="97.536" x2="259.9944" y2="97.602040625" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$11" class="0">
-<segment>
-<pinref part="SPEAKER" gate="1" pin="1"/>
-<wire x1="254.508" y1="94.996" x2="259.806440625" y2="94.996" width="0.1524" layer="91"/>
-<wire x1="259.806440625" y1="94.996" x2="259.806440625" y2="95.018859375" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
