@@ -4,7 +4,7 @@
 
 #include "Wire.h"
 
-const byte   MPU_addr          =        0x68;
+const byte   MPU_addr =        0x68;
 
 int16_t AcX, AcY, AcZ;
 float ax = 0, ay = 0, az = 0;
