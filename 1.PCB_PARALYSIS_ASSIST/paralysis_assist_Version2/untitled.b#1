@@ -1558,43 +1558,43 @@ design rules under a new name.</description>
 <attribute name="POPULARITY" value="15" x="80.96554375" y="46.605696875" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="86.04554375" y="11.299696875" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
-<element name="SW1" library="1825910-2" package="TE_1825910-2" value="1825910-2" x="71.428359375" y="91.50095625" smashed="yes" rot="R180">
-<attribute name="AVAILABILITY" value="In Stock" x="81.588359375" y="80.07095625" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="COMMENT" value="1825910-2" x="81.588359375" y="80.07095625" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="CONFIGURATION_POLE-THROW" value="Single Pole - Single Throw" x="81.588359375" y="80.07095625" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="CONTACT_CURRENT_RATING" value="50 mA" x="81.588359375" y="80.07095625" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="DESCRIPTION" value=" 50 mA SPST Round Actuator 160 Gram Force Tactile Pushbutton Switch " x="81.588359375" y="80.07095625" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="EU_ROHS_COMPLIANCE" value="Compliant" x="81.588359375" y="80.07095625" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MF" value="TE Connectivity" x="81.588359375" y="80.07095625" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MP" value="1825910-2" x="81.588359375" y="80.07095625" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="72.539790625" y="90.309425" size="0.80103125" layer="25" rot="R180"/>
-<attribute name="PACKAGE" value="None" x="81.588359375" y="80.07095625" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="PRICE" value="None" x="81.588359375" y="80.07095625" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/1825910-2/?ref=eda" x="81.588359375" y="80.07095625" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="VALUE" x="72.290153125" y="98.1214375" size="0.80126875" layer="27" rot="R180"/>
+<element name="SW1" library="1825910-2" package="TE_1825910-2" value="1825910-2" x="82.045559375" y="93.99015625" smashed="yes" rot="R180">
+<attribute name="AVAILABILITY" value="In Stock" x="92.205559375" y="82.56015625" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="COMMENT" value="1825910-2" x="92.205559375" y="82.56015625" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="CONFIGURATION_POLE-THROW" value="Single Pole - Single Throw" x="92.205559375" y="82.56015625" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="CONTACT_CURRENT_RATING" value="50 mA" x="92.205559375" y="82.56015625" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DESCRIPTION" value=" 50 mA SPST Round Actuator 160 Gram Force Tactile Pushbutton Switch " x="92.205559375" y="82.56015625" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="EU_ROHS_COMPLIANCE" value="Compliant" x="92.205559375" y="82.56015625" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="TE Connectivity" x="92.205559375" y="82.56015625" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MP" value="1825910-2" x="92.205559375" y="82.56015625" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="83.156990625" y="92.798625" size="0.80103125" layer="25" rot="R180"/>
+<attribute name="PACKAGE" value="None" x="92.205559375" y="82.56015625" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PRICE" value="None" x="92.205559375" y="82.56015625" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/1825910-2/?ref=eda" x="92.205559375" y="82.56015625" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VALUE" x="82.907353125" y="100.6106375" size="0.80126875" layer="27" rot="R180"/>
 </element>
-<element name="SW2" library="1825910-2" package="TE_1825910-2" value="1825910-2" x="83.984090625" y="91.6686" smashed="yes" rot="R180">
-<attribute name="AVAILABILITY" value="In Stock" x="104.304090625" y="70.0786" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="COMMENT" value="1825910-2" x="104.304090625" y="70.0786" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="CONFIGURATION_POLE-THROW" value="Single Pole - Single Throw" x="104.304090625" y="70.0786" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="CONTACT_CURRENT_RATING" value="50 mA" x="104.304090625" y="70.0786" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="DESCRIPTION" value=" 50 mA SPST Round Actuator 160 Gram Force Tactile Pushbutton Switch " x="104.304090625" y="70.0786" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="EU_ROHS_COMPLIANCE" value="Compliant" x="104.304090625" y="70.0786" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MF" value="TE Connectivity" x="104.304090625" y="70.0786" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MP" value="1825910-2" x="104.304090625" y="70.0786" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="85.095521875" y="90.47706875" size="0.80103125" layer="25" rot="R180"/>
-<attribute name="PACKAGE" value="None" x="104.304090625" y="70.0786" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="PRICE" value="None" x="104.304090625" y="70.0786" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/1825910-2/?ref=eda" x="104.304090625" y="70.0786" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="VALUE" x="85.185990625" y="98.28908125" size="0.80126875" layer="27" rot="R180"/>
+<element name="SW2" library="1825910-2" package="TE_1825910-2" value="1825910-2" x="92.607390625" y="93.9419" smashed="yes" rot="R180">
+<attribute name="AVAILABILITY" value="In Stock" x="112.927390625" y="72.3519" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="COMMENT" value="1825910-2" x="112.927390625" y="72.3519" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="CONFIGURATION_POLE-THROW" value="Single Pole - Single Throw" x="112.927390625" y="72.3519" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="CONTACT_CURRENT_RATING" value="50 mA" x="112.927390625" y="72.3519" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DESCRIPTION" value=" 50 mA SPST Round Actuator 160 Gram Force Tactile Pushbutton Switch " x="112.927390625" y="72.3519" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="EU_ROHS_COMPLIANCE" value="Compliant" x="112.927390625" y="72.3519" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="TE Connectivity" x="112.927390625" y="72.3519" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MP" value="1825910-2" x="112.927390625" y="72.3519" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="93.718821875" y="92.75036875" size="0.80103125" layer="25" rot="R180"/>
+<attribute name="PACKAGE" value="None" x="112.927390625" y="72.3519" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PRICE" value="None" x="112.927390625" y="72.3519" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/1825910-2/?ref=eda" x="112.927390625" y="72.3519" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VALUE" x="93.809290625" y="100.56238125" size="0.80126875" layer="27" rot="R180"/>
 </element>
-<element name="R2" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="M0805" package3d_urn="urn:adsk.eagle:package:6240587/1" value="1k" x="77.06538125" y="87.52205625" smashed="yes" rot="MR270">
-<attribute name="NAME" x="76.04938125" y="88.53805625" size="1.27" layer="26" rot="MR270"/>
-<attribute name="VALUE" x="79.35138125" y="88.53805625" size="1.27" layer="28" rot="MR270"/>
+<element name="R2" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="M0805" package3d_urn="urn:adsk.eagle:package:6240587/1" value="1k" x="86.99678125" y="88.56345625" smashed="yes" rot="MR270">
+<attribute name="NAME" x="85.98078125" y="89.57945625" size="1.27" layer="26" rot="MR270"/>
+<attribute name="VALUE" x="89.28278125" y="89.57945625" size="1.27" layer="28" rot="MR270"/>
 </element>
-<element name="R3" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="M0805" package3d_urn="urn:adsk.eagle:package:6240587/1" value="1k" x="72.4425875" y="88.354915625" smashed="yes" rot="MR0">
-<attribute name="NAME" x="73.4585875" y="89.370915625" size="1.27" layer="26" rot="MR0"/>
-<attribute name="VALUE" x="73.4585875" y="86.068915625" size="1.27" layer="28" rot="MR0"/>
+<element name="R3" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="M0805" package3d_urn="urn:adsk.eagle:package:6240587/1" value="1k" x="82.3739875" y="89.396315625" smashed="yes" rot="MR0">
+<attribute name="NAME" x="83.3899875" y="90.412315625" size="1.27" layer="26" rot="MR0"/>
+<attribute name="VALUE" x="83.3899875" y="87.110315625" size="1.27" layer="28" rot="MR0"/>
 </element>
 </elements>
 <signals>
@@ -1713,9 +1713,7 @@ design rules under a new name.</description>
 <wire x1="86.73668125" y1="68.64781875" x2="86.15730625" y2="68.64781875" width="0.889" layer="16"/>
 <wire x1="51.664109375" y1="92.27235625" x2="54.292753125" y2="89.6437125" width="0.889" layer="16"/>
 <wire x1="51.664109375" y1="92.27235625" x2="53.60085625" y2="92.27235625" width="0.889" layer="16"/>
-<wire x1="53.60085625" y1="92.27235625" x2="57.3913" y2="96.0628" width="0.889" layer="16"/>
-<wire x1="57.3913" y1="96.0628" x2="59.72555625" y2="96.0628" width="0.889" layer="16"/>
-<wire x1="59.72555625" y1="96.0628" x2="59.7874" y2="96.00095625" width="0.889" layer="16"/>
+<wire x1="53.60085625" y1="92.27235625" x2="59.81865625" y2="98.49015625" width="0.889" layer="16"/>
 <wire x1="4.70966875" y1="34.2729875" x2="4.0005" y2="34.98215625" width="0.889" layer="16"/>
 <wire x1="4.70966875" y1="34.2729875" x2="6.17016875" y2="34.2729875" width="0.889" layer="16"/>
 <wire x1="6.17016875" y1="34.2729875" x2="11.5740125" y2="34.2729875" width="0.889" layer="16"/>
@@ -1727,10 +1725,11 @@ design rules under a new name.</description>
 <vertex x="0.0381" y="101.5365"/>
 <vertex x="0.0381" y="0.0508"/>
 </polygon>
-<wire x1="77.484090625" y1="96.1686" x2="83.984090625" y2="96.1686" width="0" layer="19" extent="1-1"/>
-<wire x1="71.428359375" y1="96.00095625" x2="77.484090625" y2="96.1686" width="0" layer="19" extent="1-1"/>
-<wire x1="64.928359375" y1="96.00095625" x2="71.428359375" y2="96.00095625" width="0" layer="19" extent="1-1"/>
-<wire x1="59.7874" y1="96.00095625" x2="64.928359375" y2="96.00095625" width="0" layer="19" extent="16-16"/>
+<wire x1="59.81865625" y1="98.49015625" x2="75.545559375" y2="98.49015625" width="0.889" layer="16"/>
+<wire x1="75.545559375" y1="98.49015625" x2="82.045559375" y2="98.49015625" width="0.889" layer="16"/>
+<wire x1="82.045559375" y1="98.49015625" x2="86.059134375" y2="98.49015625" width="0.889" layer="16"/>
+<wire x1="86.059134375" y1="98.49015625" x2="86.107390625" y2="98.4419" width="0.889" layer="16"/>
+<wire x1="86.107390625" y1="98.4419" x2="92.607390625" y2="98.4419" width="0.889" layer="16"/>
 </signal>
 <signal name="5V">
 <contactref element="NANO" pad="30"/>
@@ -1796,15 +1795,15 @@ design rules under a new name.</description>
 <wire x1="82.3341" y1="5.4737" x2="83.9343" y2="3.8735" width="1.27" layer="16"/>
 <wire x1="82.23554375" y1="7.235696875" x2="82.3341" y2="7.137140625" width="0.889" layer="16"/>
 <wire x1="82.3341" y1="7.137140625" x2="82.3341" y2="5.4737" width="1.27" layer="16"/>
-<wire x1="73.3925875" y1="88.354915625" x2="73.509728125" y2="88.47205625" width="0.889" layer="16"/>
-<wire x1="73.509728125" y1="88.47205625" x2="77.06538125" y2="88.47205625" width="1.27" layer="16"/>
-<wire x1="77.06538125" y1="88.47205625" x2="79.61244375" y2="88.47205625" width="1.27" layer="16"/>
-<wire x1="79.61244375" y1="88.47205625" x2="79.629" y2="88.4555" width="0.889" layer="16"/>
-<via x="79.629" y="88.4555" extent="1-16" drill="0.889"/>
-<wire x1="79.629" y1="88.4555" x2="82.8929" y2="85.1916" width="0.889" layer="1"/>
-<via x="82.8929" y="85.1916" extent="1-16" drill="0.889"/>
-<wire x1="82.8929" y1="85.1916" x2="86.15730625" y2="81.92719375" width="1.27" layer="16"/>
-<wire x1="86.15730625" y1="81.92719375" x2="86.15730625" y2="71.18781875" width="1.27" layer="16"/>
+<wire x1="83.3239875" y1="89.396315625" x2="83.441128125" y2="89.51345625" width="0.889" layer="16"/>
+<wire x1="83.441128125" y1="89.51345625" x2="86.99678125" y2="89.51345625" width="1.27" layer="16"/>
+<wire x1="86.99678125" y1="89.51345625" x2="89.54384375" y2="89.51345625" width="1.27" layer="16"/>
+<wire x1="89.54384375" y1="89.51345625" x2="89.5604" y2="89.4969" width="0.889" layer="16"/>
+<via x="89.5604" y="89.4969" extent="1-16" drill="0.889"/>
+<wire x1="89.5604" y1="89.4969" x2="92.8243" y2="86.233" width="0.889" layer="1"/>
+<via x="92.8243" y="86.233" extent="1-16" drill="0.889"/>
+<wire x1="92.8243" y1="86.233" x2="86.15730625" y2="79.56601875" width="1.27" layer="16"/>
+<wire x1="86.15730625" y1="79.56601875" x2="86.15730625" y2="71.18781875" width="1.27" layer="16"/>
 <wire x1="67.3742625" y1="65.8360375" x2="70.477634375" y2="65.8360375" width="1.27" layer="16"/>
 <wire x1="70.477634375" y1="65.8360375" x2="75.773534375" y2="65.8360375" width="1.27" layer="16"/>
 <wire x1="75.773534375" y1="65.8360375" x2="75.925934375" y2="65.6836375" width="1.27" layer="16"/>
@@ -1914,11 +1913,11 @@ design rules under a new name.</description>
 <contactref element="SW1" pad="2"/>
 <contactref element="R3" pad="2"/>
 <wire x1="46.347634375" y1="45.5160375" x2="55.237634375" y2="45.5160375" width="0.889" layer="16"/>
-<wire x1="71.428359375" y1="88.41914375" x2="71.4925875" y2="88.354915625" width="0.889" layer="16"/>
-<wire x1="71.4925875" y1="88.354915625" x2="67.533459375" y2="84.3957875" width="0.889" layer="16"/>
-<wire x1="67.533459375" y1="84.3957875" x2="67.4920875" y2="84.3957875" width="0.889" layer="16"/>
-<wire x1="67.4920875" y1="84.3957875" x2="65.3161" y2="82.2198" width="0.889" layer="16"/>
-<wire x1="65.3161" y1="82.2198" x2="65.3161" y2="71.7169" width="0.889" layer="16"/>
+<wire x1="81.359759375" y1="89.46054375" x2="81.4239875" y2="89.396315625" width="0.889" layer="16"/>
+<wire x1="81.4239875" y1="89.396315625" x2="81.312959375" y2="89.2852875" width="0.889" layer="16"/>
+<wire x1="81.312959375" y1="89.2852875" x2="81.3435" y2="89.2852875" width="0.889" layer="16"/>
+<wire x1="81.3435" y1="89.2852875" x2="81.3435" y2="87.7443" width="0.889" layer="16"/>
+<wire x1="81.3435" y1="87.7443" x2="65.3161" y2="71.7169" width="0.889" layer="16"/>
 <via x="65.3161" y="71.7169" extent="1-16" drill="0.889"/>
 <wire x1="65.3161" y1="71.7169" x2="65.3161" y2="60.5536" width="0.889" layer="1"/>
 <via x="65.3161" y="60.5536" extent="1-16" drill="0.889"/>
@@ -1926,8 +1925,9 @@ design rules under a new name.</description>
 <wire x1="65.3161" y1="50.3428" x2="60.4266" y2="45.4533" width="0.889" layer="16"/>
 <wire x1="60.4266" y1="45.4533" x2="55.300371875" y2="45.4533" width="0.889" layer="16"/>
 <wire x1="55.300371875" y1="45.4533" x2="55.237634375" y2="45.5160375" width="0.889" layer="16"/>
-<wire x1="71.428359375" y1="88.41914375" x2="71.428359375" y2="91.50095625" width="0" layer="19" extent="16-16"/>
-<wire x1="64.928359375" y1="91.50095625" x2="71.428359375" y2="91.50095625" width="0" layer="19" extent="1-1"/>
+<wire x1="75.545559375" y1="93.99015625" x2="82.045559375" y2="93.99015625" width="0.889" layer="16"/>
+<wire x1="82.045559375" y1="93.99015625" x2="81.359759375" y2="93.30435625" width="0.889" layer="16"/>
+<wire x1="81.359759375" y1="93.30435625" x2="81.359759375" y2="89.46054375" width="0.889" layer="16"/>
 </signal>
 <signal name="D9">
 <contactref element="NANO" pad="12"/>
@@ -1941,9 +1941,10 @@ design rules under a new name.</description>
 <contactref element="SW2" pad="2"/>
 <contactref element="R2" pad="2"/>
 <wire x1="46.347634375" y1="40.4360375" x2="55.237634375" y2="40.4360375" width="0.889" layer="16"/>
-<wire x1="81.39045625" y1="86.57205625" x2="77.06538125" y2="86.57205625" width="0.889" layer="16"/>
-<wire x1="77.06538125" y1="86.57205625" x2="67.7164" y2="77.223075" width="0.889" layer="16"/>
-<wire x1="67.7164" y1="77.223075" x2="67.7164" y2="71.7042" width="0.889" layer="16"/>
+<wire x1="91.32185625" y1="87.61345625" x2="86.99678125" y2="87.61345625" width="0.889" layer="16"/>
+<wire x1="86.99678125" y1="87.61345625" x2="85.58708125" y2="87.61345625" width="0.889" layer="16"/>
+<wire x1="85.58708125" y1="87.61345625" x2="69.677825" y2="71.7042" width="0.889" layer="16"/>
+<wire x1="67.7164" y1="71.7042" x2="69.677825" y2="71.7042" width="0.889" layer="16"/>
 <via x="67.7164" y="71.7042" extent="1-16" drill="0.889"/>
 <wire x1="67.7164" y1="71.7042" x2="67.7164" y2="60.6679" width="0.889" layer="1"/>
 <wire x1="67.7164" y1="60.6679" x2="67.7545" y2="60.6298" width="0.889" layer="1"/>
@@ -1951,8 +1952,11 @@ design rules under a new name.</description>
 <wire x1="67.7545" y1="60.6298" x2="67.7545" y2="45.6692" width="0.889" layer="16"/>
 <wire x1="62.5213375" y1="40.4360375" x2="67.7545" y2="45.6692" width="0.889" layer="16"/>
 <wire x1="55.237634375" y1="40.4360375" x2="62.5213375" y2="40.4360375" width="0.889" layer="16"/>
-<wire x1="81.39045625" y1="86.57205625" x2="83.984090625" y2="91.6686" width="0" layer="19" extent="16-16"/>
-<wire x1="77.484090625" y1="91.6686" x2="77.06538125" y2="86.57205625" width="0" layer="19" extent="16-16"/>
+<wire x1="86.107390625" y1="93.9419" x2="92.607390625" y2="93.9419" width="0.889" layer="16"/>
+<wire x1="92.607390625" y1="93.9419" x2="92.607390625" y2="89.663009375" width="0.889" layer="16"/>
+<wire x1="92.607390625" y1="89.663009375" x2="92.6084" y2="89.662" width="0.889" layer="16"/>
+<wire x1="92.6084" y1="89.662" x2="92.6084" y2="88.9" width="0.889" layer="16"/>
+<wire x1="92.6084" y1="88.9" x2="91.32185625" y2="87.61345625" width="0.889" layer="16"/>
 </signal>
 <signal name="TEMP">
 <contactref element="NANO" pad="22"/>
