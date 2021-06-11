@@ -8,7 +8,7 @@
 #include "mpu6050_imu.h"
 #include "SerialCOM.h"
 #include "LM35.h"
-
+#include "DFPlayer.h"
 
 #include <SPI.h>
 
@@ -51,7 +51,7 @@ comComm ObjCOM;   // Serial Communication
 lm35  ObjLM35(A3);
 
 /* Class for Display Memu */
-class dispST7920
+class MainClass
 {
 
   public:
@@ -85,9 +85,9 @@ class dispST7920
     {
       
       //u8g2.clearBuffer();          // clear the internal memory
-      u8g2.setFont(u8g2_font_ncenB08_tr); // choose a suitable font
+      
       //u8g2.setFont(u8g2_font_profont10_tf); // choose a suitable font
-
+      u8g2.setFont(u8g2_font_ncenB08_tr); // choose a suitable font
       u8g2.setFontDirection(0);
       getSpeak_SwitchCmd();
     }
@@ -96,7 +96,7 @@ class dispST7920
 
       unsigned long time_now = millis();
 
-      /*********** This block will prints temparture ************/
+      /*********** This block will prints temperture ************/
       temparature = ObjLM35.getTempCelcius();
       u8g2.setCursor(5, 64);
       u8g2.print(F("T:"));
