@@ -37,14 +37,14 @@ byte cnt = 0;
 /* U8G2 initiation */
 //U8G2_ST7920_192X32_F_8080 u8g2(U8G2_R0, 8, 9, 10, 11, 4, 5, 6, 7, /*enable=*/ 18, /*cs=*/ U8X8_PIN_NONE, /*dc=*/ 17, /*reset=*/ U8X8_PIN_NONE);
 //U8G2_ST7920_192X32_F_SW_SPI u8g2(U8G2_R0, /* clock=*/ 18 /* A4 */ , /* data=*/ 16 /* A2 */, /* CS=*/ 17 /* A3 */, /* reset=*/ U8X8_PIN_NONE);
-//U8G2_ST7920_128X64_F_8080 u8g2(U8G2_R0, 8, 9, 10, 11, 4, 5, 6, 7, /*enable=*/ 18 /* A4 */, /*cs=*/ U8X8_PIN_NONE, /*dc/rs=*/ 17 /* A3 */, /*reset=*/ 15 /* A1 */);  // Remember to set R/W to 0 
+//U8G2_ST7920_128X64_F_8080 u8g2(U8G2_R0, 8, 9, 10, 11, 4, 5, 6, 7, /*enable=*/ 18 /* A4 */, /*cs=*/ U8X8_PIN_NONE, /*dc/rs=*/ 17 /* A3 */, /*reset=*/ 15 /* A1 */);  // Remember to set R/W to 0
 //U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R0, /* clock=*/ 18 /* A4 */ , /* data=*/ 16 /* A2 */, /* CS=*/ 17 /* A3 */, /* reset=*/ U8X8_PIN_NONE);
 //U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* CS=*/ 10, /* reset=*/ 8);
 //U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R0, /* clock=*/ 14, /* data=*/ 13, /* CS=*/ 15, /* reset=*/ 16); // Feather HUZZAH ESP8266, E=clock=14, RW=data=13, RS=CS
-//U8G2_ST7920_128X64_F_HW_SPI u8g2(U8G2_R0, /* CS=*/ 10, /* reset=*/ 8);
+U8G2_ST7920_128X64_F_HW_SPI u8g2(U8G2_R2, /* CS=*/ 10, /* reset=*/ 5);
 //U8G2_ST7920_128X64_F_HW_SPI u8g2(U8G2_R0, /* CS=*/ 15, /* reset=*/ 16); // Feather HUZZAH ESP8266, E=clock=14, RW=data=13, RS=CS
 //U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R2, /* clock=*/ 13, /* data=*/ 10, /* CS=*/ 11, /* reset=*/ 12);
-U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R2, /* clock=*/ 13, /* data=*/ 11, /* CS=*/ 10, /* reset=*/ 5);
+//U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R2, /* clock=*/ 13, /* data=*/ 11, /* CS=*/ 10, /* reset=*/ 5);
 
 LM393 ObjSound(soundPin); // Create Sound sensor object
 MPU6050 ObjImu;   // Object for MPU6050, for fall detection */
@@ -85,13 +85,6 @@ class MainClass
     /* Run Menu */
     void runMenu()
     {
-      ObjImu.detectFall(&fallDetected);
-        if (fallDetected == true)
-        { // Problem causing at here
-          Fall_Detected();    // Uncommenting this cause flikeeing problem
-          fallDetected = false;
-          //break;
-        }
       u8g2.clearBuffer();          // clear the internal memory
       //u8g2.setFont(u8g2_font_profont10_tf); // choose a suitable font
       u8g2.setFont(u8g2_font_ncenB08_tr); // choose a suitable font
@@ -111,8 +104,8 @@ class MainClass
       {
         u8g2.setCursor(15, 64);
         //dtostrf(temparature, 4, 2, buff);
-       // u8g2.print(F("27.34"));
-       u8g2.print(temparature);
+        // u8g2.print(F("27.34"));
+        u8g2.print(temparature);
       }
 
       // u8g2.setCursor(64, 64);
@@ -126,13 +119,13 @@ class MainClass
         //wait approx. [period] ms
 
         /* This block is for fall detection */
-//        //ObjImu.detectFall(&fallDetected);
-//        if (fallDetected == true)
-//        { // Problem causing at here
-//          Fall_Detected();    // Uncommenting this cause flikeeing problem
-//          fallDetected = false;
-//          //break;
-//        }
+        ObjImu.detectFall(&fallDetected);
+        if (fallDetected == true)
+        { // Problem causing at here
+          Fall_Detected();    // Uncommenting this cause flikeeing problem
+          fallDetected = false;
+          //break;
+        }
 
         if (ObjSound.readSoundSens() == 0 && soundDetected == false) //Read Sound Sensor state outputs 1 when sound detected
         {
@@ -364,7 +357,7 @@ class MainClass
       unsigned long waitStartTime = millis();
       while ( millis() < (waitStartTime + 120000) ) // Wait For 2 Minutes to get Service, Set Accourding to ua Service Wait Time (for minute : 60* 1000)
       {
-              u8g2.clearBuffer();
+        u8g2.clearBuffer();
 
         //   u8g2.drawStr(30,40,command_disp[Speak_Swt++]);
         u8g2.setCursor(20, 20);
@@ -426,6 +419,8 @@ class MainClass
         if (gotServiceFlag == 1)
         {
           music.DFPlay(9);
+          u8g2.clearBuffer();
+
           break;
         }// Got service get out of wait conformation loop
 
@@ -454,7 +449,7 @@ class MainClass
         if (i % 2 == 0)
         {
           u8g2.setCursor(15, 35);
-//          u8g2.print(switch_ctrl[requested_service - 1]); // write something to the internal memory
+          //          u8g2.print(switch_ctrl[requested_service - 1]); // write something to the internal memory
           if (requested_service - 1 == 0)
           {
             u8g2.print(F("To Switch FAN"));  // write something to the internal memory
@@ -470,8 +465,8 @@ class MainClass
             u8g2.print(F("To Switch Messenger"));  // write something to the internal memory
             music.DFPlay(7);
           }
-//REVISIT THIS TO SEND COMMANDS TO NODEMCU
-//ObjCOM.ToggleSW(switch_ctrl[requested_service - 1]);
+          //REVISIT THIS TO SEND COMMANDS TO NODEMCU
+          //ObjCOM.ToggleSW(switch_ctrl[requested_service - 1]);
         }
         // Send This to Wifi Thrice from here
         u8g2.sendBuffer();
@@ -488,7 +483,7 @@ class MainClass
           i = i;
           }*/
 
-       u8g2.clearBuffer();
+        u8g2.clearBuffer();
         /*time_now = millis();
           while(millis() < (time_now + 1000)){
           // wait for some time
@@ -497,24 +492,36 @@ class MainClass
       }
 
       gotServiceFlag = 1; // set got service flag
-       u8g2.clearBuffer();
+      u8g2.clearBuffer();
     }
 
 
     /** When Room Temparature got high turn On Fan */
     void Turn_On_FAN(char *data)
     {
-  //    ObjCOM.ToggleSW(data);
+      //    ObjCOM.ToggleSW(data);
 
     }
 
     void Fall_Detected()
     {
       /* This is to send mesg to indicate Fall detected */
-//      ObjCOM.ToggleSW(F("FALL DETECTED"));
-
+      //      ObjCOM.ToggleSW(F("FALL DETECTED"));
+      u8g2.clearBuffer();
+      u8g2.setCursor(20, 20);
+      u8g2.print(F("NEED HELP!"));
+      u8g2.setCursor(10, 40);
+      u8g2.print(F("I FELL DOWN!"));
+      u8g2.sendBuffer();
       //play requesting for fall service
-          music.DFPlay(2);
+      music.DFPlay(2);
+      delay(4000);
+      music.DFPlay(2);
+      delay(4000);
+      music.DFPlay(2);
+      delay(4000);
+      music.DFPlay(2);
+      delay(4000);
     }
 
 

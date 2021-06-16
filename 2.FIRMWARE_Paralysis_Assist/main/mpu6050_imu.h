@@ -82,7 +82,7 @@ byte fallCounter = 0;
         // it by for using if else conditions
       //fallCounter = AM;
     /* Fall detection for next 200 ms to confirm object is falling */
-        if(AM < 1) // setting fall detection threshold to 5
+        if(AM < 3) // setting fall detection threshold to 5
         {
           #if 0
           #endif 
