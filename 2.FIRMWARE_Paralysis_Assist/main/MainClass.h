@@ -85,9 +85,14 @@ class MainClass
     /* Run Menu */
     void runMenu()
     {
-      
+      ObjImu.detectFall(&fallDetected);
+        if (fallDetected == true)
+        { // Problem causing at here
+          Fall_Detected();    // Uncommenting this cause flikeeing problem
+          fallDetected = false;
+          //break;
+        }
       u8g2.clearBuffer();          // clear the internal memory
-      
       //u8g2.setFont(u8g2_font_profont10_tf); // choose a suitable font
       u8g2.setFont(u8g2_font_ncenB08_tr); // choose a suitable font
       u8g2.setFontDirection(0);
@@ -106,7 +111,8 @@ class MainClass
       {
         u8g2.setCursor(15, 64);
         //dtostrf(temparature, 4, 2, buff);
-        u8g2.print(F("27.34"));
+       // u8g2.print(F("27.34"));
+       u8g2.print(temparature);
       }
 
       // u8g2.setCursor(64, 64);
@@ -120,13 +126,13 @@ class MainClass
         //wait approx. [period] ms
 
         /* This block is for fall detection */
-        ObjImu.detectFall(&fallDetected);
-        if (fallDetected == true)
-        { // Problem causing at here
-          //    Fall_Detected();    // Uncommenting this cause flikeeing problem
-          fallDetected = false;
-          //break;
-        }
+//        //ObjImu.detectFall(&fallDetected);
+//        if (fallDetected == true)
+//        { // Problem causing at here
+//          Fall_Detected();    // Uncommenting this cause flikeeing problem
+//          fallDetected = false;
+//          //break;
+//        }
 
         if (ObjSound.readSoundSens() == 0 && soundDetected == false) //Read Sound Sensor state outputs 1 when sound detected
         {
@@ -193,6 +199,7 @@ class MainClass
         Speak_Swt++;
         u8g2.sendBuffer();          // transfer internal memory to the display
         display_delay(2000);    // millis to wait
+        u8g2.clearBuffer();
         soundDetected = false; // Disable flag for sound detection
 
         if (StateChanged == SPEAK_STATE)
@@ -223,7 +230,6 @@ class MainClass
 
         gotServiceFlag = 0; // clear service flag if it set
 
-        u8g2.clearBuffer();
       }
     }
 
@@ -231,12 +237,12 @@ class MainClass
     void getSpeakCmds()
     {
       fallDetected = false;
-      u8g2.clearBuffer();
 
       u8g2.setFont(u8g2_font_ncenB08_tr);  // choose a suitable font
       Speak_Cnt = 0; // clear switch count
       while (1)
       {
+        u8g2.clearBuffer();
         u8g2.setCursor(20, 40);
         u8g2.print(F("REQUESTING..."));
 
@@ -283,7 +289,7 @@ class MainClass
         if (gotServiceFlag == 1)
           break;  // Got service get out of speak commands loop
 
-       // u8g2.clearBuffer();
+        u8g2.clearBuffer();
       }
 
     }
@@ -294,7 +300,6 @@ class MainClass
     {
       //u8g2.setFont(u8g2_font_ncenB08_tr);  // choose a suitable font
       u8g2.clearBuffer();
-
       u8g2.setFont(u8g2_font_ncenB08_tr);  // choose a suitable font
       Switch_Cnt = 0; // clear switch count
 
@@ -344,7 +349,7 @@ class MainClass
         if (gotServiceFlag == 1)
           break;  // Got service get out of speak commands loop
 
-       // u8g2.clearBuffer();
+        u8g2.clearBuffer();
       }
 
 
@@ -354,12 +359,13 @@ class MainClass
     /* Wait for pop up service confirmation */
     void waitForServiceConformation(int requested_service)
     {
-      u8g2.clearBuffer();
       u8g2.setFont(u8g2_font_ncenB08_tr);  // choose a suitable font
       Cnt = 0; // used for alternative prints
       unsigned long waitStartTime = millis();
       while ( millis() < (waitStartTime + 120000) ) // Wait For 2 Minutes to get Service, Set Accourding to ua Service Wait Time (for minute : 60* 1000)
       {
+              u8g2.clearBuffer();
+
         //   u8g2.drawStr(30,40,command_disp[Speak_Swt++]);
         u8g2.setCursor(20, 20);
         u8g2.print(F("REQUESTED"));
@@ -402,7 +408,7 @@ class MainClass
 
         /* This below block will  wait for service Confirm button press */
         unsigned long time_now = millis();
-        while (millis() < (time_now + 2000)) {
+        while (millis() < (time_now + 3000)) {
 
           if (digitalRead(buttonConformation) == LOW  && debounce1 == true) //Button 1 Pressed
           {
@@ -428,7 +434,7 @@ class MainClass
 
       if (gotServiceFlag == 0)
       {
-        Serial.println(F("Failed To Get Service"));
+        //Serial.println(F("Failed To Get Service"));
 
         gotServiceFlag = 1; // enable so that go to init stage
       }
@@ -438,10 +444,10 @@ class MainClass
 
     void SendToggleSwitch(int requested_service)
     {
-      u8g2.clearBuffer();
       //   u8g2.drawStr(30,40,command_disp[Speak_Swt++]);
       for (byte i = 0; i < 7; i++)
       {
+        u8g2.clearBuffer();
         u8g2.setCursor(20, 20);
         u8g2.print(F("REQUESTED"));
 
@@ -482,7 +488,7 @@ class MainClass
           i = i;
           }*/
 
-      //  u8g2.clearBuffer();
+       u8g2.clearBuffer();
         /*time_now = millis();
           while(millis() < (time_now + 1000)){
           // wait for some time
@@ -491,7 +497,7 @@ class MainClass
       }
 
       gotServiceFlag = 1; // set got service flag
-
+       u8g2.clearBuffer();
     }
 
 
@@ -508,6 +514,7 @@ class MainClass
 //      ObjCOM.ToggleSW(F("FALL DETECTED"));
 
       //play requesting for fall service
+          music.DFPlay(2);
     }
 
 
