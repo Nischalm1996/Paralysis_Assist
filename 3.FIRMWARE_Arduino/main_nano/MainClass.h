@@ -6,7 +6,7 @@
 #include <U8g2lib.h>
 #include "LM393.h"
 #include "mpu6050_imu.h"
-#include "SerialCOM.h"
+//#include "SerialCOM.h"
 #include "LM35.h"
 #include "DFPlayer.h"
 
@@ -48,7 +48,7 @@ U8G2_ST7920_128X64_F_HW_SPI u8g2(U8G2_R2, /* CS=*/ 10, /* reset=*/ 5);
 
 LM393 ObjSound(soundPin); // Create Sound sensor object
 MPU6050 ObjImu;   // Object for MPU6050, for fall detection */
-comComm ObjCOM;   // Serial Communication
+//comComm ObjCOM;   // Serial Communication
 lm35  ObjLM35(A3);
 DFPlayer music;
 /* Class for Display Memu */
@@ -73,12 +73,15 @@ class MainClass
     {
       ObjSound.Init();    // Begin LM393(soundSensor)
       ObjImu.beginMPU();  // Begin MPU
-      ObjCOM.Init();      // Begin NODEMCU Serial
+      //    ObjCOM.Init();      // Begin NODEMCU Serial
       pinMode(buttonConformation, INPUT);
       //  pinMode(buttonPin, INPUT);  // sound pin  // has to change
       u8g2.begin(); //
       //Serial.begin(9600); // just for debug
-      music.begin();
+      Serial.begin(9600);
+      Serial.println(F("Begin"));
+      music.beginSetup();
+      music.DFPlay(3);
 
     }
 
@@ -318,7 +321,7 @@ class MainClass
         }
         Switch_Cnt++;
         u8g2.sendBuffer();          // transfer internal memory to the display
-        display_delay(1000);
+        display_delay(2000);
         //u8g2.drawStr(30,40," ");
 
         soundDetected = false; // Disable flag for sound detection
@@ -355,6 +358,7 @@ class MainClass
       u8g2.setFont(u8g2_font_ncenB08_tr);  // choose a suitable font
       Cnt = 0; // used for alternative prints
       unsigned long waitStartTime = millis();
+      music.begin();
       while ( millis() < (waitStartTime + 120000) ) // Wait For 2 Minutes to get Service, Set Accourding to ua Service Wait Time (for minute : 60* 1000)
       {
         u8g2.clearBuffer();
@@ -440,7 +444,23 @@ class MainClass
     void SendToggleSwitch(int requested_service)
     {
       //   u8g2.drawStr(30,40,command_disp[Speak_Swt++]);
-      for (byte i = 0; i < 7; i++)
+      Serial.begin(9600);
+      if (requested_service - 1 == 0)
+      {
+        Serial.println(F("*1X"));
+      }
+      else if (requested_service - 1 == 1)
+      {
+        Serial.println(F("*2X"));
+
+      }
+      else
+      {
+        Serial.println(F("*3X"));
+
+      }
+      music.begin();
+      for (byte i = 0; i < 4; i++)
       {
         u8g2.clearBuffer();
         u8g2.setCursor(20, 20);
@@ -465,8 +485,7 @@ class MainClass
             u8g2.print(F("To Switch Messenger"));  // write something to the internal memory
             music.DFPlay(7);
           }
-          //REVISIT THIS TO SEND COMMANDS TO NODEMCU
-          //ObjCOM.ToggleSW(switch_ctrl[requested_service - 1]);
+
         }
         // Send This to Wifi Thrice from here
         u8g2.sendBuffer();
@@ -476,31 +495,14 @@ class MainClass
         unsigned long time_now = millis();
         while (millis() < (time_now + 2000)) {
         }
-        /*
-          unsigned long time_now = millis();
-          while(millis() < (time_now + 1000)){
-          // wait for some time
-          i = i;
-          }*/
 
         u8g2.clearBuffer();
-        /*time_now = millis();
-          while(millis() < (time_now + 1000)){
-          // wait for some time
-          i = i;
-          }*/
+
       }
+
 
       gotServiceFlag = 1; // set got service flag
       u8g2.clearBuffer();
-    }
-
-
-    /** When Room Temparature got high turn On Fan */
-    void Turn_On_FAN(char *data)
-    {
-      //    ObjCOM.ToggleSW(data);
-
     }
 
     void Fall_Detected()
@@ -514,8 +516,9 @@ class MainClass
       u8g2.print(F("I FELL DOWN!"));
       u8g2.sendBuffer();
       //play requesting for fall service
-      music.DFPlay(2);
-      delay(4000);
+      Serial.begin(9600);
+      Serial.println(F("*4X"));
+      music.begin();
       music.DFPlay(2);
       delay(4000);
       music.DFPlay(2);

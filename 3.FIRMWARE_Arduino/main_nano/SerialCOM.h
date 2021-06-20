@@ -14,7 +14,7 @@ class comComm
 
    void ToggleSW(char *data)
    {
-    Serial.println(data);
+    Serial.print('*');Serial.print(data);Serial.print('X');
    }
 };
 

@@ -22,24 +22,26 @@ DFRobotDFPlayerMini myDFPlayer;
 
 class DFPlayer
 {
-public:
-  void begin()
-  {
-    mySoftwareSerial.begin(9600);
-    //Serial.begin(115200);
-
-    while(!myDFPlayer.begin(mySoftwareSerial))
-    { //Use softwareSerial to communicate with mp3.
+  public:
+    void begin()
+    {
+      mySoftwareSerial.begin(9600);
     }
-    //Serial.println(F("DFPlayer Mini online."));
-
-    myDFPlayer.volume(30); //Set volume value. From 0 to 30
-    myDFPlayer.play(1);    //Play the first mp3
-  }
-  void DFPlay(byte number)
-  {
-    myDFPlayer.play(number);
-  }
+    void beginSetup()
+    {
+      mySoftwareSerial.begin(9600);
+      //Serial.begin(115200);
+      while (!myDFPlayer.begin(mySoftwareSerial))
+      { //Use softwareSerial to communicate with mp3.
+      }
+      //Serial.println(F("DFPlayer Mini online."));
+      myDFPlayer.volume(30); //Set volume value. From 0 to 30
+      // myDFPlayer.play(1);    //Play the first mp3
+    }
+    void DFPlay(byte number)
+    {
+      myDFPlayer.play(number);
+    }
 };
 
 #endif //DFPLAYER_H
