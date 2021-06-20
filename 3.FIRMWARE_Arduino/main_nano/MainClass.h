@@ -81,7 +81,7 @@ class MainClass
       Serial.begin(9600);
       Serial.println(F("Begin"));
       music.beginSetup();
-      music.DFPlay(3);
+      music.DFPlay(10);
 
     }
 
