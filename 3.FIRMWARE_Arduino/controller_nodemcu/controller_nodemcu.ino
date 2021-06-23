@@ -138,5 +138,4 @@ void setup() {
 
 void loop() {
   serialOp();
-  delay(3000);
 }
