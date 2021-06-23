@@ -1,47 +1,46 @@
-#include <SoftwareSerial.h>
 
-SoftwareSerial SoftSerial(D8, D7);
 boolean fall = false;
 boolean light1 = false;
 boolean light2 = false;
 boolean light3 = false;
 void setup()
 {
-  Serial.begin(115200);
-  Serial.println("Begin");
-  SoftSerial.begin(9600);
+  Serial.begin(9600);
+  //Serial.println("Begin");
+  //Serial.println("working");
 }
 String dataIn = "";
 char c = 0;
 void loop()
 {
-  while (SoftSerial.available() > 0)
+  while (Serial.available() > 0)
   {
-    c = SoftSerial.read();
-    Serial.println(c);
+    c = Serial.read();
     if (c == 'X') {
+      //dataIn = dataIn + c;
       break;
     }
-    else    {
+    else if (c != '\n')   {
       dataIn = dataIn + c;
     }
-    //Serial.println(c);
+   // Serial.print("dataIn:"); Serial.println(dataIn);
 
   }
-  //Serial.println(dataIn);
   if (c == 'X')
   {
+    //Serial.println("parse");
+    //Serial.println(dataIn);
     parse_the_data();
   }
-  c = 0;
-  dataIn = "";
+
 }
 void parse_the_data()
 {
   int indexofS = dataIn.indexOf("*");
   int indexofx = dataIn.indexOf("X");
 
-  String dat = dataIn.substring (indexofS + 1 , indexofx);
+  String dat = dataIn.substring (indexofS +1 , indexofx);
+  //Serial.print("Dat:"); Serial.println(dat);
 
   if (dat == "1")
   {
@@ -58,7 +57,10 @@ void parse_the_data()
   if (dat == "4")
   {
     fall = true;
+    //Serial.println("fall detected");
     //send data to client
   }
   fall = false;
+  c = 0;
+  dataIn = "";
 }
