@@ -30,6 +30,12 @@
 #include<espnow.h>
 
 #define MY_NAME   "SLAVE_NODE"
+#define l1 16
+#define l2 5
+#define l3 4
+
+
+
 
 struct __attribute__((packed)) dataPacket {
   boolean light1;
@@ -37,10 +43,10 @@ struct __attribute__((packed)) dataPacket {
   boolean light3;
   boolean fall;
 };
+static dataPacket packet;  
 
 void dataReceived(uint8_t *senderMac, uint8_t *data, uint8_t dataLength) {
   char macStr[18];
-  dataPacket packet;  
 
   snprintf(macStr, sizeof(macStr), "%02x:%02x:%02x:%02x:%02x:%02x", senderMac[0], senderMac[1], senderMac[2], senderMac[3], senderMac[4], senderMac[5]);
 
@@ -52,14 +58,17 @@ void dataReceived(uint8_t *senderMac, uint8_t *data, uint8_t dataLength) {
   
   Serial.print("light1: ");
   Serial.println(packet.light1);
+  Serial.println(l1);
   Serial.print("light2: ");
   Serial.println(packet.light2);
+  Serial.println(l2);
   Serial.print("light3: ");
   Serial.println(packet.light3);
+  Serial.println(l3);
     Serial.print("fall: ");
   Serial.println(packet.fall);
-}
  
+}
 void setup() {
     
   Serial.begin(9600);     // initialize serial port
@@ -71,10 +80,14 @@ void setup() {
   Serial.println(MY_NAME);
   Serial.print("My MAC address is: ");
   Serial.println(WiFi.macAddress());
-
+  
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();        // we do not want to connect to a WiFi network
 
+  pinMode(l1,OUTPUT);
+  pinMode(l2,OUTPUT);
+  pinMode(l3,OUTPUT);
+  
   if(esp_now_init() != 0) {
     Serial.println("ESP-NOW initialization failed");
     return;
@@ -86,5 +99,11 @@ void setup() {
 }
 
 void loop() {
-
+   digitalWrite(l1,packet.light1);
+  digitalWrite(l2,packet.light2);
+  digitalWrite(l3,packet.light3);
+ if(packet.fall==1)
+ {
+  Serial.println("send a msg to wtsapp");
+}
 }
