@@ -1115,7 +1115,14 @@ design rules under a new name.</description>
 <wire x1="66.79844375" y1="94.2086" x2="66.79844375" y2="93.973396875" width="0.889" layer="16"/>
 <wire x1="79.985615625" y1="60.96" x2="81.8005" y2="62.774884375" width="0.889" layer="16"/>
 <wire x1="81.8005" y1="95.00940625" x2="78.27040625" y2="98.5395" width="0.889" layer="16"/>
-<wire x1="100.33" y1="50.8" x2="100.33" y2="68.58" width="0" layer="19" extent="1-1"/>
+<polygon width="0.254" layer="16" isolate="1.27">
+<vertex x="58.72635625" y="35.595559375"/>
+<vertex x="58.72635625" y="99.09501875"/>
+<vertex x="58.20054375" y="99.62083125"/>
+<vertex x="120.39091875" y="99.62083125"/>
+<vertex x="120.39091875" y="35.83025625"/>
+<vertex x="120.625615625" y="35.595559375"/>
+</polygon>
 </signal>
 <signal name="3V3">
 <contactref element="U1" pad="11"/>
