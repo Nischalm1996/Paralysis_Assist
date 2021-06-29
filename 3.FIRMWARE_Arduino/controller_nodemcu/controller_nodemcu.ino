@@ -28,12 +28,15 @@
 *********************************************************************************************************************/
 #include<ESP8266WiFi.h>
 #include<espnow.h>
+#include"callBot.h"
+
 
 #define MY_NAME         "MASTER_NODE"
 #define MY_ROLE         ESP_NOW_ROLE_CONTROLLER         // set the role of this device: CONTROLLER, SLAVE, COMBO
 #define RECEIVER_ROLE   ESP_NOW_ROLE_SLAVE              // set the role of the receiver
 #define WIFI_CHANNEL    1
 uint8_t receiverAddress[] = {0x48, 0x3F, 0xDA, 0xA3, 0x80, 0x76};   // please update this with the MAC address of the receiver
+callBot wtsMsg;
 
 struct __attribute__((packed)) dataPacket {
   boolean light1;
@@ -105,6 +108,7 @@ void parse_the_data()
   {
     packet.fall = true;
     Serial.println("fall detected");
+    wtsMsg.sendWhatsappMessage();
     esp_now_send(receiverAddress, (uint8_t *) &packet, sizeof(packet));
 
     //send data to client
@@ -118,6 +122,7 @@ void setup() {
   Serial.begin(9600);     // initialize serial port
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();        // we do not want to connect to a WiFi network
+   wtsMsg.begin();
 
   if (esp_now_init() != 0) {
     Serial.println("ESP-NOW initialization failed");
@@ -138,4 +143,5 @@ void setup() {
 
 void loop() {
   serialOp();
+  delay(3000);
 }
