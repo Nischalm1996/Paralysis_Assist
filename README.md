@@ -16,9 +16,9 @@
 | CS_DISP   | D11                                    |
 | RST       | D12                                    |
 | TEMP      | A3                                     |
-| RED       | A0                                     |
+| RED       | A2                                     |
 | GREEN     | A1                                     |
-| BLUE      | A2                                     |
+| BLUE      | A0                                     |
 
 
 ### MODULES USED
