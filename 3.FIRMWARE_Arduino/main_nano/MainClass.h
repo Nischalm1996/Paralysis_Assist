@@ -52,6 +52,9 @@ MPU6050 ObjImu;   // Object for MPU6050, for fall detection */
 lm35  ObjLM35(A3);
 DFPlayer music;
 /* Class for Display Memu */
+boolean led_red = false;
+boolean led_blue = false;
+boolean led_green = false;
 class MainClass
 {
 
@@ -448,16 +451,20 @@ class MainClass
       if (requested_service - 1 == 0)
       {
         Serial.println(F("*1X"));
+        led_blue = !led_blue;
+        digitalWrite(A0, led_blue);
       }
       else if (requested_service - 1 == 1)
       {
         Serial.println(F("*2X"));
-
+        led_green = !led_green;
+        digitalWrite(A1, led_green);
       }
       else
       {
         Serial.println(F("*3X"));
-
+        led_red = !led_red;
+        digitalWrite(A2, led_red);
       }
       music.begin();
       for (byte i = 0; i < 4; i++)
