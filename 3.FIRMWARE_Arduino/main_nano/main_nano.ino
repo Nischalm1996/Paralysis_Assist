@@ -13,8 +13,5 @@ void setup(void) {
 }
 
 void loop(void) {
-
 ObjMenu.runMenu();
-
-delay(1000);
 }
