@@ -108,7 +108,19 @@ void parse_the_data()
   {
     packet.fall = true;
     Serial.println("fall detected");
+    esp_now_deinit();
+    wtsMsg.begin();
     wtsMsg.sendWhatsappMessage();
+    WiFi.mode(WIFI_STA);
+    WiFi.disconnect();        // we do not want to connect to a WiFi network
+    if (esp_now_init() != 0) {
+      Serial.println("ESP-NOW initialization failed");
+      return;
+
+    }
+    esp_now_set_self_role(MY_ROLE);
+    esp_now_register_send_cb(transmissionComplete);   // this function will get called once all data is sent
+    esp_now_add_peer(receiverAddress, RECEIVER_ROLE, WIFI_CHANNEL, NULL, 0);
     esp_now_send(receiverAddress, (uint8_t *) &packet, sizeof(packet));
 
     //send data to client
@@ -122,22 +134,22 @@ void setup() {
   Serial.begin(9600);     // initialize serial port
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();        // we do not want to connect to a WiFi network
-   wtsMsg.begin();
+  //wtsMsg.begin();
 
   if (esp_now_init() != 0) {
     Serial.println("ESP-NOW initialization failed");
     return;
 
-    packet.light1 = false;
-    packet.light2 = false;
-    packet.light3 = false;
-    packet.fall = false;
   }
 
   esp_now_set_self_role(MY_ROLE);
   esp_now_register_send_cb(transmissionComplete);   // this function will get called once all data is sent
   esp_now_add_peer(receiverAddress, RECEIVER_ROLE, WIFI_CHANNEL, NULL, 0);
 
+  packet.light1 = false;
+  packet.light2 = false;
+  packet.light3 = false;
+  packet.fall = false;
   Serial.println("Initialized.");
 }
 
